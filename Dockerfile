@@ -25,7 +25,6 @@ RUN cp /tmp/buildpack/conf/php/php-fpm.conf /app/.heroku/php/etc/php
 RUN curl -Ss https://lang-php.s3.amazonaws.com/dist-cedar-master/nginx-1.6.0.tar.gz | tar xz -C /app/.heroku/php
 RUN cp /tmp/buildpack/conf/nginx/nginx.conf.default /app/.heroku/php/etc/nginx/nginx.conf
 
-# Don't use the buildpack composer script because it blats /app/* (?!)
 RUN curl -Ss https://getcomposer.org/installer | php -- --install-dir=/app/.heroku/php/bin --filename=composer && \
     chmod +x /app/.heroku/php/bin/composer
 
